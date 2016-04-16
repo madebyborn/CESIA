@@ -1,21 +1,22 @@
-<header class="site-header">
-
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-
-      </a>
-
-      <div class="trigger">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+        <span class="fa fa-bars"></span>
+      </button>
+      <a href="/" class="navbar-brand">{{site.title}}</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse white-fade" id="navbar">
+      {% assign pages = site.pages | sort:"weight"  %}
+      <ul class="nav navbar-nav">
+        {% for p in pages %}
+          <li>
+            <a {% if p.url == page.url %}class="active"{% endif %} href="{{ p.url }}">
+              {{ p.title }}
+            </a>
+          </li>
         {% endfor %}
-      </div>
-    </nav>
+      </ul>
+    </div>
   </div>
-</header>
+</nav>
