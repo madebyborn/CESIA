@@ -1,3 +1,7 @@
+$red: #800b0b;
+$white: #e7e8e8;
+$black: #212021;
+
 body {
   width: 100%;
   height: 100%;
@@ -25,4 +29,49 @@ html {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+}
+
+.navbar-custom {
+  background-color: $white;
+  height: 70px;
+
+  .navbar-header {
+    height: 70px;
+
+    button {
+      height: 54px;
+    }
+  }
+
+  a {
+    color: $red;
+    font-weight: 700;
+  }
+
+  .navbar-brand {
+    padding: 13px;
+    height: 70px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .nav.navbar-nav {
+    height: 70px;
+
+    li {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      height: 70px;
+
+      a.active {
+        color: $black;
+      }
+    }
+  }
+
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
 }
