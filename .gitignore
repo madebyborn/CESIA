@@ -2,5 +2,6 @@
 .sass-cache/
 _site/
 .idea/
+.idea/workspace.xml
 *.css.map
 
