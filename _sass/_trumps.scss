@@ -9,10 +9,11 @@ T R U M P S
 .header {
   display:                table;
   width:                  100%;
-  height:                 auto;
+  height:                 100%;
   text-align:             left;
   color:                  #fff;
   background-color:       #000;
+  content:                ' ';
 }
 
 .navbar-custom {
@@ -63,6 +64,13 @@ T R U M P S
   .navbar-collapse.in {
     overflow-y: visible;
     height: auto;
+  }
+}
+
+#index {
+
+  &.header {
+    background-image: url("/assets/img/bg/index.png");
   }
 }
 
