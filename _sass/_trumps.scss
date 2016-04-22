@@ -7,13 +7,13 @@ T R U M P S
 }
 
 .header {
-  display:                table;
-  width:                  100%;
-  height:                 100%;
-  text-align:             left;
-  color:                  #fff;
-  background-color:       #000;
-  content:                ' ';
+  display:  table;
+  width:    100%;
+  height:   100%;
+  text-align: left;
+  color:            #fff;
+  background-color: #000;
+  content:  ' ';
 }
 
 .navbar-custom {
@@ -37,8 +37,8 @@ T R U M P S
   }
 
   .navbar-brand {
-    padding: 13px;
-    height: 70px;
+    padding:  13px;
+    height:   70px;
 
     img {
       height: 100%;
@@ -47,9 +47,9 @@ T R U M P S
 
   .nav.navbar-nav {
     li {
-      padding-top: 10px;
+      padding-top:    10px;
       padding-bottom: 10px;
-      height: 70px;
+      height:         70px;
 
       a.active {
         color: $black;
@@ -63,14 +63,24 @@ T R U M P S
 
   .navbar-collapse.in {
     overflow-y: visible;
-    height: auto;
+    height:     auto;
   }
 }
 
 #index {
 
-  &.header {
-    background-image: url("/assets/img/bg/index.png");
+  background-image: url("/assets/img/bg/index.png");
+
+  &:before {
+    content:    ' ';
+    display:    block;
+    background: #000;
+    position:   absolute;
+    top:        0;
+    left:       0;
+    width:      100%;
+    height:     100%;
+    opacity:    0.55;
   }
 }
 
