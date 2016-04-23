@@ -86,5 +86,26 @@ T R U M P S
 
 #footer {
   background: $red;
-  color: $white;
+  color:      $white;
+  padding-top:    3.5em;
+  padding-bottom: 3.5em;
+
+  .footer__logo {
+    max-width: 100%;
+  }
+
+  .footer__text {
+    text-align: right;
+  }
+
+  @media screen and (max-width: 769px) {
+    .footer__text {
+      padding-top: 2em;
+      text-align: center;
+    }
+
+    .footer__logo {
+      max-width: 80%;
+    }
+  }
 }
