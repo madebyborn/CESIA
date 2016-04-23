@@ -4,12 +4,12 @@ title: Contacto
 permalink: /contacto/
 weight: 3
 ---
+
 <section id="map"></section>
 
 <script src="/assets/js/map.js"></script>
 {% if jekyll.environment == 'production' %}
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2qjL2PuNynVds1dKWhnkIJQHH87dpHCU&callback=configureMap"
-    async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2qjL2PuNynVds1dKWhnkIJQHH87dpHCU&callback=configureMap" async defer></script>
 {% elsif jekyll.environment == 'development' %}
   <script src="https://maps.googleapis.com/maps/api/js?callback=configureMap" async defer></script>
 {% endif %}
