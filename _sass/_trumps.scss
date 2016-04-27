@@ -1,6 +1,76 @@
 /* * * * *\
 T R U M P S
 \* * * * */
+section {
+  padding-top:    2em;
+  padding-bottom: 2em;
+  background-position: center;
+
+  p {
+    font-size: 1.2em;
+  }
+
+  .title {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 1em;
+
+    @media screen and (min-width: 768px) {
+      & {
+        font-size: 2.5em;
+      }
+    }
+  }
+}
+
+footer {
+  background: $red;
+  color:      $white;
+  padding-top:    2em;
+  padding-bottom: 2em;
+
+  .footer__logo {
+    max-width: 100%;
+  }
+
+  .footer__text {
+    text-align: right;
+  }
+
+  @media screen and (max-width: 769px) {
+    .footer__text {
+      padding-top: 2em;
+      text-align: center;
+    }
+
+    .footer__logo {
+      max-width: 80%;
+    }
+  }
+}
+
+.btn {
+  border-radius: 0;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  &.btn-white {
+    background-color: $white;
+    color: $red;
+  }
+
+  &.btn-red {
+    background-color: $red;
+    color: $white;
+  }
+
+  &.btn-black {
+    background-color: $black;
+    color: $white;
+  }
+}
 
 .navbar {
   margin-bottom: 0;
@@ -14,6 +84,30 @@ T R U M P S
   color:            #fff;
   background-color: #000;
   content:  ' ';
+
+  .row {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 2.5em;
+
+    @media screen and (min-width: 768px) {
+      & {
+        font-size: 3em;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      & {
+        font-size: 4em;
+      }
+    }
+  }
 }
 
 .navbar-custom {
@@ -68,48 +162,39 @@ T R U M P S
 }
 
 #index {
-
-  background-image: url("/assets/img/bg/index.png");
-
-  &:before {
-    content:    ' ';
-    display:    block;
-    background: #000;
-    position:   absolute;
-    top:        0;
-    left:       0;
-    width:      100%;
-    height:     100%;
-    opacity:    0.55;
-  }
-}
-
-#footer {
-  background: $red;
-  color:      $white;
-  padding-top:    3.5em;
-  padding-bottom: 3.5em;
-
-  .footer__logo {
-    max-width: 100%;
-  }
-
-  .footer__text {
-    text-align: right;
-  }
-
-  @media screen and (max-width: 769px) {
-    .footer__text {
-      padding-top: 2em;
-      text-align: center;
-    }
-
-    .footer__logo {
-      max-width: 80%;
-    }
-  }
+  background: linear-gradient($trans-black, $trans-black), url('/assets/img/bg/index.png');
+  background-size: cover;
 }
 
 #map {
   height: 25em;
+}
+
+#quienes-somos {
+  background: linear-gradient($trans-red, $trans-red), url('/assets/img/bg/quienes-somos.jpg');
+  background-size: cover;
+  color: $white;
+}
+
+#nuestra-filosofia {
+  background: linear-gradient($trans-white, $trans-white), url('/assets/img/bg/nuestra-filosofia.jpg');
+  background-size: cover;
+  background-position: center;
+  color: $red;
+}
+
+#contactanos {
+  background: linear-gradient($trans-white, $trans-white), url('/assets/img/bg/contactanos.jpg');
+  background-size: cover;
+  background-position: center;
+
+  .title {
+    color: $red;
+    font-size: 3.2em;
+  }
+
+  .btn {
+    font-size: 2em;
+    padding: .5em;
+  }
 }
