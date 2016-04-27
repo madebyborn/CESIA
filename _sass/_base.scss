@@ -13,3 +13,15 @@ html {
   width:  100%;
   height: 100%;
 }
+
+hr {
+  width: 4em;
+  border-top: 0.4em solid;
+  margin-left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  br {
+    display: none;
+  }
+}
