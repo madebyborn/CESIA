@@ -4,7 +4,7 @@ layout: default
 
 <section id="index" class="header">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row vertical-center">
       <div class="col-md-8 col-md-offset-1 content">
         <h2 class="title">
           Supervisión, Estudios Técnicos y <br>
@@ -18,7 +18,7 @@ layout: default
 
 <section id="quienes-somos">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row vertical-center">
       <div class="col-md-8 col-md-offset-1 content">
         <h2 class="title">
           QUIÉNES SOMOS
@@ -34,8 +34,20 @@ layout: default
   </div>
 </section>
 
+<section id="servicios">
+  <div class="container-fluid vertical-center">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-1 content">
+        <h2 class="title">SERVICIOS</h2>
+        <h3>Peritaje Topográfico</h3>
+        <a href="/servicios" class="btn btn-black">VER TODOS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="nuestra-filosofia">
-  <div class="container-fluid">
+  <div class="container-fluid vertical-center">
     <div class="row">
       <div class="col-md-8 col-md-offset-1 content">
         <h2 class="title">NUESTRA FILOSOFÍA</h2>
@@ -44,15 +56,19 @@ layout: default
           brindándole un servicio de alta calidad que es reflejado en sus obras
           y proyectos.
         </p>
-        <a href="#" class="btn btn-red">LEER MÁS</a>
+        <a href="/nosotros" class="btn btn-red">LEER MÁS</a>
       </div>
     </div>
   </div>
 </section>
 
+<section id="clientes">
+
+</section>
+
 <section id="contactanos">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row vertical-center">
       <div class="text-center">
         <h2 class="title">¿Estás por empezar un proyecto?</h2>
         <a href="/contacto" class="btn btn-black">CONTÁCTANOS</a>
@@ -60,3 +76,11 @@ layout: default
     </div>
   </div>
 </section>
+
+<script>
+  $(document).ready(function(){
+    $('.carousel').slick({
+      adaptiveHeight: true
+    });
+  });
+</script>
