@@ -34,12 +34,30 @@ layout: default
   </div>
 </section>
 
-<section id="servicios">
-  <div class="container-fluid vertical-center">
+<section id="servicios" class="carousel">
+  <div id="peritaje-topografico">
     <div class="row">
       <div class="col-md-8 col-md-offset-1 content">
         <h2 class="title">SERVICIOS</h2>
         <h3>Peritaje Topográfico</h3>
+        <a href="/servicios" class="btn btn-black">VER TODOS</a>
+      </div>
+    </div>
+  </div>
+  <div id="estudios-geotecnicos">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-1 content">
+        <h2 class="title">SERVICIOS</h2>
+        <h3>Estudios Geotécnicos</h3>
+        <a href="/servicios" class="btn btn-black">VER TODOS</a>
+      </div>
+    </div>
+  </div>
+  <div id="estudios-geotecnicos-2">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-1 content">
+        <h2 class="title">SERVICIOS</h2>
+        <h3>Estudios Geotécnicos</h3>
         <a href="/servicios" class="btn btn-black">VER TODOS</a>
       </div>
     </div>
@@ -79,8 +97,8 @@ layout: default
 
 <script>
   $(document).ready(function(){
-    $('.carousel').slick({
-      adaptiveHeight: true
+    $('#servicios.carousel').slick({
+      fade: true
     });
   });
 </script>

@@ -74,6 +74,11 @@ section {
 }
 
 .carousel {
+  position: relative;
+
+  div {
+    height: 100%;
+  }
 
   h3 {
     font-size: 4em;
@@ -209,9 +214,27 @@ footer {
 }
 
 #servicios {
-  background: linear-gradient($trans-black, $trans-black), url('/assets/img/sliders/servicios/peritaje-topografico.jpg');
+  background-color: $black;
   background-size: cover;
   color: $white;
+
+  .slick-slide {
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  #peritaje-topografico {
+    @include background-filter($trans-black, '/assets/img/sliders/servicios/peritaje-topografico.jpg');
+  }
+
+  #estudios-geotecnicos {
+    @include background-filter($trans-black, '/assets/img/sliders/servicios/estudios-geotecnicos.png');
+
+  }
+
+  #estudios-geotecnicos-2 {
+    @include background-filter($trans-black, '/assets/img/sliders/servicios/estudios-geotecnicos-2.png')
+  }
 }
 
 #nuestra-filosofia {
