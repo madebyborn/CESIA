@@ -2,7 +2,8 @@
   "name": "CESIA",
   "homepage": "https://github.com/madebyborn/CESIA",
   "authors": [
-    "Marco Alvarado <marcoantonioam9@gmail.com>"
+    "Marco Alvarado <marcoantonioam9@gmail.com>",
+    "Daniel Contreras <daniel.c82@gmail.com>"
   ],
   "description": "Website for CESIA Ingenieria",
   "main": "",
@@ -15,5 +16,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "slick-carousel": "^1.5.9"
+  }
 }
