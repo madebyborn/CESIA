@@ -5,7 +5,7 @@ layout: default
 <section id="index" class="header">
   <div class="container-fluid">
     <div class="row vertical-center">
-      <div class="col-md-8 col-md-offset-1 content">
+      <div class="col-md-8 col-md-offset-2">
         <h2 class="title">
           Supervisión, Estudios Técnicos y <br>
           Proyectos de Ingeniería Civil <br>
@@ -19,7 +19,7 @@ layout: default
 <section id="quienes-somos">
   <div class="container-fluid">
     <div class="row vertical-center">
-      <div class="col-md-8 col-md-offset-1 content">
+      <div class="col-md-8 col-md-offset-2">
         <h2 class="title">
           QUIÉNES SOMOS
         </h2>
@@ -35,27 +35,27 @@ layout: default
 </section>
 
 <section id="servicios" class="carousel">
-  <div id="peritaje-topografico">
+  <div id="peritaje-topografico" class="container-fluid">
     <div class="row">
-      <div class="col-md-8 col-md-offset-1 content">
+      <div class="content col-md-8 col-md-offset-2">
         <h2 class="title">SERVICIOS</h2>
         <h3>Peritaje Topográfico</h3>
         <a href="/servicios" class="btn btn-black">VER TODOS</a>
       </div>
     </div>
   </div>
-  <div id="estudios-geotecnicos">
+  <div id="estudios-geotecnicos" class="container-fluid">
     <div class="row">
-      <div class="col-md-8 col-md-offset-1 content">
+      <div class="content col-md-8 col-md-offset-2">
         <h2 class="title">SERVICIOS</h2>
         <h3>Estudios Geotécnicos</h3>
         <a href="/servicios" class="btn btn-black">VER TODOS</a>
       </div>
     </div>
   </div>
-  <div id="estudios-geotecnicos-2">
+  <div id="estudios-geotecnicos-2" class="container-fluid">
     <div class="row">
-      <div class="col-md-8 col-md-offset-1 content">
+      <div class="content col-md-8 col-md-offset-2">
         <h2 class="title">SERVICIOS</h2>
         <h3>Estudios Geotécnicos</h3>
         <a href="/servicios" class="btn btn-black">VER TODOS</a>
@@ -67,7 +67,7 @@ layout: default
 <section id="nuestra-filosofia">
   <div class="container-fluid vertical-center">
     <div class="row">
-      <div class="col-md-8 col-md-offset-1 content">
+      <div class="col-md-8 col-md-offset-2">
         <h2 class="title">NUESTRA FILOSOFÍA</h2>
         <p>
           Nuestra meta principal es obtener la satisfacción de nuestro cliente,
@@ -80,8 +80,14 @@ layout: default
   </div>
 </section>
 
-<section id="clientes">
-
+<section id="clientes" class="carousel">
+  {% for image in site.static_files %}
+    {% if image.path contains 'img/customer' %}
+      <div class="logo-container">
+        <img data-lazy="{{ site.baseurl }}{{ image.path }}" alt="Logo">
+      </div>
+    {% endif %}
+  {% endfor %}
 </section>
 
 <section id="contactanos">
@@ -98,7 +104,43 @@ layout: default
 <script>
   $(document).ready(function(){
     $('#servicios.carousel').slick({
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 3000,
       fade: true
+    });
+
+    $('#clientes.carousel').slick({
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      infinite: true,
+      lazyLoad: 'ondemand',
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     });
   });
 </script>

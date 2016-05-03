@@ -6,5 +6,7 @@
 }
 
 @mixin background-filter($color, $url) {
-  background: linear-gradient($color, $color), url($url);
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient($color, $color), url($url);
 }

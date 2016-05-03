@@ -83,6 +83,13 @@ section {
   h3 {
     font-size: 4em;
   }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
 }
 
 .navbar {
@@ -106,6 +113,7 @@ section {
 
   a {
     color: $red;
+    font-size: 1.2em;
     font-weight: 700;
   }
 
@@ -146,13 +154,6 @@ section {
   background-color: #000;
   position: relative;
 
-  .row {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-40%);
-  }
-
   .title {
     font-weight: 700;
     font-size: 2.5em;
@@ -183,7 +184,18 @@ footer {
   }
 
   .footer__text {
+    font-size: 1.2em;
     text-align: right;
+  }
+
+  @media screen and (min-width: 1200px) {
+    .footer__text {
+      font-size: 1.3em;
+    }
+
+    .footer__logo {
+      max-width: 70%;
+    }
   }
 
   @media screen and (max-width: 769px) {
@@ -199,8 +211,7 @@ footer {
 }
 
 #index {
-  background: linear-gradient($trans-black, $trans-black), url('/assets/img/bg/index.png');
-  background-size: cover;
+  @include background-filter($trans-black, '/assets/img/bg/index.png');
 }
 
 #map {
@@ -208,20 +219,13 @@ footer {
 }
 
 #quienes-somos {
-  background: linear-gradient($trans-red, $trans-red), url('/assets/img/bg/quienes-somos.jpg');
-  background-size: cover;
+  @include background-filter($trans-red, '/assets/img/bg/quienes-somos.jpg');
   color: $white;
 }
 
 #servicios {
   background-color: $black;
-  background-size: cover;
   color: $white;
-
-  .slick-slide {
-    background-size: cover !important;
-    background-position: center !important;
-  }
 
   #peritaje-topografico {
     @include background-filter($trans-black, '/assets/img/sliders/servicios/peritaje-topografico.jpg');
@@ -229,7 +233,6 @@ footer {
 
   #estudios-geotecnicos {
     @include background-filter($trans-black, '/assets/img/sliders/servicios/estudios-geotecnicos.png');
-
   }
 
   #estudios-geotecnicos-2 {
@@ -238,20 +241,27 @@ footer {
 }
 
 #nuestra-filosofia {
-  background: linear-gradient($trans-white, $trans-white), url('/assets/img/bg/nuestra-filosofia.jpg');
-  background-size: cover;
-  background-position: center;
+  @include background-filter($trans-white, '/assets/img/bg/nuestra-filosofia.jpg');
   color: $red;
 }
 
 #clientes {
   background-color: $black;
+
+  .logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 60vw;
+    }
+  }
 }
 
 #contactanos {
-  background: linear-gradient($trans-white, $trans-white), url('/assets/img/bg/contactanos.jpg');
-  background-size: cover;
-  background-position: center;
+  @include background-filter($trans-white, '/assets/img/bg/contactanos.jpg');
 
   .title {
     color: $red;
