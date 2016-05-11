@@ -4,3 +4,115 @@ title: Nosotros
 permalink: /nosotros/
 weight: 1
 ---
+
+<section id="nosotros" class="header">
+  <div class="container-fluid">
+    <div class="row vertical-center">
+      <div class="col-md-8 col-md-offset-2">
+        <h2 class="title">
+          Conoce CESIA
+        </h2>
+        <hr>
+        <h3 class="subtitle">Nuestra meta principal es obtener la satisfacción<br>
+        de nuestro cliente.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quienes-somos" class="white">
+  <div class="container-fluid vertical-center text-xs-center text-md-left">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-4">
+        <h2 class="title">
+          QUIÉNES SOMOS
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-2">
+        <img class="icon" src="/assets/img/svg/icons/helmet.svg" alt="Casco">
+      </div>
+      <div class="col-md-6">
+        <p>
+          Somos una empresa constituida en la ciudad de Hermosillo, Sonora.
+          Integrada por un equipo de ingenieros especialistas capacitados para la realización de estudios técnicos y
+          proyectos de Ingeniería Civil, la cual ofrece sus servicios profesionales enfocados a la Industria de la Construcción.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="valores" class="carousel">
+  <div id="mision" class="container-fluid">
+    <div class="row">
+      <div class="content col-md-8 col-md-offset-2">
+        <h2 class="title">VALORES</h2>
+        <p><b>Misión.</b> Nuestra meta principal es obtener la satisfacción de nuestro
+        cliente, brindándole un servicio de alta calidad que es reflejado en sus
+        obras y proyectos.</p>
+      </div>
+    </div>
+  </div>
+  <div id="vision" class="container-fluid">
+    <div class="row">
+      <div class="content col-md-8 col-md-offset-2">
+        <h2 class="title">VALORES</h2>
+        <p><b>Visión.</b> Ser una empresa en su ramo por agregar un enfoque ético
+        y profesional en sus servicios, impulsando el crecimiento de todo su personal
+        con el uso de nuevas tecnologías y capacitación constante.</p>
+      </div>
+    </div>
+  </div>
+  <div id="filosofia" class="container-fluid">
+    <div class="row">
+      <div class="content col-md-8 col-md-offset-2">
+        <h2 class="title">VALORES</h2>
+        <p><b>Filosofía.</b> En Cesia Ingeniería estamos comprometidos a ofrecer
+          a nuestros clientes un valor agregado en todos nuestros servicios, esforzándonos
+          en nuestro crecimiento profesional y humano para brindar un trabajo
+          confiable y satisfactorio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="clientes">
+  <div class="container-fluid">
+    <div class="row">
+      <h2 class="title text-center">NUESTROS CLIENTES</h2>
+    </div>
+  </div>
+  <div class="logos">
+    {% for image in site.static_files %}
+      {% if image.path contains 'img/customer' %}
+        <div class="logo-container">
+          <img src="{{ site.baseurl }}{{ image.path }}" alt="Logo">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="ayudarte" class="pre-footer">
+  <div class="container-fluid">
+    <div class="row vertical-center">
+      <div class="text-center">
+        <h2 class="title">¿En qué podemos ayudarte?</h2>
+        <a href="/servicios" class="btn btn-black">SERVICIOS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function() {
+    $('#valores.carousel').slick({
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 7000,
+      fade: true
+    })
+  });
+</script>

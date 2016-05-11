@@ -7,16 +7,16 @@ section {
   width: 100%;
   position: relative;
 
-  @media screen and (max-width: 768px) {
-    & {
-      height: 100%;
-    }
+  @media screen and (max-width: $screen-md-min) {
+    height: 100%;
+    min-height: 100%;
+    overflow-y: inherit;
   }
 
-  @media screen and (min-width: 768px) {
-    & {
-      height:   50%;
-    }
+  @media screen and (min-width: $screen-md-min) {
+    height: 50%;
+    min-height: 50%;
+    overflow-y: inherit;
   }
 
   .vertical-center {
@@ -29,10 +29,8 @@ section {
   p {
     font-size: 1.2em;
 
-    @media screen and (min-width: 1280px) {
-      & {
-        font-size: 1.5em;
-      }
+    @media screen and (min-width: $screen-lg-min) {
+      font-size: 1.5em;
     }
   }
 
@@ -41,10 +39,14 @@ section {
     font-weight: 700;
     margin-bottom: 1em;
 
-    @media screen and (min-width: 768px) {
-      & {
-        font-size: 2.5em;
-      }
+    @media screen and (min-width: $screen-sm-min) {
+      font-size: 2.5em;
+    }
+  }
+
+  .icon {
+    @media screen and (max-width: $screen-md-min) {
+      margin-bottom: 1em;
     }
   }
 }
@@ -157,17 +159,42 @@ section {
   .title {
     font-weight: 700;
     font-size: 2.5em;
+    margin-bottom: 0;
 
-    @media screen and (min-width: 768px) {
-      & {
-        font-size: 3em;
-      }
+    @media screen and (min-width: $screen-sm-min) {
+      font-size: 3em;
     }
 
-    @media screen and (min-width: 1200px) {
-      & {
-        font-size: 5em;
-      }
+    @media screen and (min-width: $screen-lg-min) {
+      font-size: 5em;
+    }
+  }
+
+  .subtitle {
+    font-style: italic;
+
+    @media screen and (min-width: $screen-sm-min) {
+      font-size: 1.7em;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      font-size: 2em;
+    }
+  }
+}
+
+.pre-footer {
+  .title {
+    color: $red;
+    font-size: 3.2em;
+  }
+
+  .btn {
+    font-size: 2em;
+    padding: .5em;
+
+    @media screen and (max-width: $screen-sm-min) {
+      font-size: 1.5em;
     }
   }
 }
@@ -188,7 +215,7 @@ footer {
     text-align: right;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: $screen-lg-min) {
     .footer__text {
       font-size: 1.3em;
     }
@@ -198,7 +225,7 @@ footer {
     }
   }
 
-  @media screen and (max-width: 769px) {
+  @media screen and (max-width: $screen-sm-min) {
     .footer__text {
       padding-top: 2em;
       text-align: center;
@@ -214,6 +241,10 @@ footer {
   @include background-filter($trans-black, '/assets/img/bg/index.png');
 }
 
+#nosotros {
+  @include background-filter($trans-black, '/assets/img/bg/nosotros.jpg');
+}
+
 #map {
   height: 25em;
 }
@@ -221,6 +252,19 @@ footer {
 #quienes-somos {
   @include background-filter($trans-red, '/assets/img/bg/quienes-somos.jpg');
   color: $white;
+
+  &.white {
+    @include background-filter($trans-white, '/assets/img/bg/quienes-somos.jpg');
+    color: $black;
+  }
+
+  img {
+    max-width: 100%;
+
+    @media screen and (max-width: $screen-sm-min) {
+      max-width: 20%;
+    }
+  }
 }
 
 #servicios {
@@ -247,33 +291,61 @@ footer {
 
 #clientes {
   background-color: $black;
+  color: $white;
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  .logos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   .logo-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 0.8em 5em;
 
     img {
-      max-width: 60vw;
+      @media screen and (max-width: $screen-sm-min) {
+        width: 40vw;
+      }
+
+      @media screen and (min-width: $screen-sm-min) {
+        width: 15vw;
+      }
+
+      @media screen and (min-width: $screen-lg-min) {
+        width: 10vw;
+      }
     }
   }
 }
 
 #contactanos {
   @include background-filter($trans-white, '/assets/img/bg/contactanos.jpg');
+}
 
-  .title {
-    color: $red;
-    font-size: 3.2em;
+#ayudarte {
+  @include background-filter($trans-white, '/assets/img/bg/ayudarte.jpg');
+}
+
+#valores {
+  color: $white;
+  background-color: $red;
+
+  #mision {
+    @include background-filter($trans-red, '/assets/img/sliders/valores/mision.jpg')
   }
 
-  .btn {
-    font-size: 2em;
-    padding: .5em;
+  #vision {
+    @include background-filter($trans-black, '/assets/img/sliders/valores/vision.jpg')
+  }
 
-    @media screen and (max-width: 768px) {
-      font-size: 1.5em;
-    }
+  #filosofia {
+    @include background-filter($trans-red, '/assets/img/sliders/valores/filosofia.jpg')
   }
 }
