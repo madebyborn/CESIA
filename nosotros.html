@@ -83,15 +83,15 @@ weight: 1
     <div class="row">
       <h2 class="title text-center">NUESTROS CLIENTES</h2>
     </div>
-  </div>
-  <div class="logos">
-    {% for image in site.static_files %}
-      {% if image.path contains 'img/customer' %}
-        <div class="logo-container">
-          <img src="{{ site.baseurl }}{{ image.path }}" alt="Logo">
-        </div>
-      {% endif %}
-    {% endfor %}
+    <div class="logos">
+      {% for image in site.static_files %}
+        {% if image.path contains 'img/customer' %}
+          <div class="logo-container">
+            <img src="{{ site.baseurl }}{{ image.path }}" alt="Logo">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </section>
 

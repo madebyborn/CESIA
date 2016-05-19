@@ -3,27 +3,23 @@ T R U M P S
 \* * * * */
 section {
   background-position: center;
-  display: table;
-  width: 100%;
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 50%;
+
+  .container-fluid {
+    width: 100%;
+  }
 
   @media screen and (max-width: $screen-md-min) {
-    height: 100%;
     min-height: 100%;
     overflow-y: inherit;
   }
 
   @media screen and (min-width: $screen-md-min) {
-    height: 50%;
     min-height: 50%;
     overflow-y: inherit;
-  }
-
-  .vertical-center {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
   }
 
   p {
@@ -76,9 +72,9 @@ section {
 }
 
 .carousel {
-  position: relative;
+  min-height: 0;
 
-  div {
+  .container-fluider {
     height: 100%;
   }
 
@@ -92,6 +88,20 @@ section {
     justify-content: center;
     align-items: flex-start;
   }
+}
+
+.slick-track {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.slick-slide {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .navbar {
@@ -151,7 +161,7 @@ section {
 }
 
 .header {
-  height:   100%;
+  min-height:   100%;
   color:            $white;
   background-color: #000;
   position: relative;
@@ -247,6 +257,12 @@ footer {
 
 #map {
   height: 25em;
+
+  @media screen and (max-width: $screen-md-min) {
+    height: 80%;
+    min-height: 80%;
+    overflow-y: inherit;
+  }
 }
 
 #quienes-somos {
@@ -267,7 +283,7 @@ footer {
   }
 }
 
-#servicios {
+#index-servicios {
   background-color: $black;
   color: $white;
 
@@ -334,18 +350,157 @@ footer {
 }
 
 #valores {
+  align-items: stretch;
   color: $white;
   background-color: $red;
 
   #mision {
-    @include background-filter($trans-red, '/assets/img/sliders/valores/mision.jpg')
+    @include background-filter($trans-red, '/assets/img/sliders/valores/mision.jpg');
   }
 
   #vision {
-    @include background-filter($trans-black, '/assets/img/sliders/valores/vision.jpg')
+    @include background-filter($trans-black, '/assets/img/sliders/valores/vision.jpg');
   }
 
   #filosofia {
-    @include background-filter($trans-red, '/assets/img/sliders/valores/filosofia.jpg')
+    @include background-filter($trans-red, '/assets/img/sliders/valores/filosofia.jpg');
+  }
+}
+
+#equipo {
+  @include background-filter($trans-red, '/assets/img/bg/equipo.png');
+}
+
+#servicios-description {
+  @include background-filter($trans-white, '/assets/img/bg/quienes-somos.jpg');
+
+  img {
+    max-width: 100%;
+
+    @media screen and (max-width: $screen-sm-min) {
+      max-width: 20%;
+    }
+  }
+}
+
+#servicios {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  overflow-x: scroll;
+
+  @media screen and (min-width: $screen-lg-min) {
+    overflow-x: hidden;
+  }
+
+  .servicio {
+    background-color: $black;
+    position: relative;
+    flex: 1;
+    border: 1px $white;
+    border-style: solid;
+    min-width: 100vw;
+    height: 50vh;
+
+    @media screen and (min-width: $screen-md-min) {
+      min-width: 30vw;
+      height: 50vh;
+    }
+
+    @media screen and (max-width: $screen-md-min) {
+
+    }
+
+    .container {
+      color: $white;
+      position: absolute;
+      bottom: 1em;
+      text-align: center;
+      width: 100%;
+
+      .title {
+        font-size: 2em;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+
+      hr {
+        margin-left: auto;
+      }
+    }
+
+    &#peritaje-topografico {
+      @include background-filter($trans-black, '/assets/img/bg/servicios/servicio-1.png');
+    }
+
+    &#supervision {
+      @include background-filter($trans-black, '/assets/img/bg/servicios/servicio-2.png');
+    }
+
+    &#calidad {
+      @include background-filter($trans-black, '/assets/img/bg/servicios/servicio-3.png');
+    }
+
+    &#ingenieria {
+      @include background-filter($trans-black, '/assets/img/bg/servicios/servicio-4.png');
+    }
+
+    &#topografia {
+      @include background-filter($trans-black, '/assets/img/bg/servicios/servicio-5.png');
+    }
+
+    &#geotecnico {
+      @include background-filter($trans-black, '/assets/img/bg/servicios/servicio-6.png');
+    }
+
+    &#hidrologico {
+      @include background-filter($trans-black, '/assets/img/bg/servicios/servicio-7.png');
+    }
+
+    &#consultoria {
+      @include background-filter($trans-black, '/assets/img/bg/servicios/servicio-8.png');
+    }
+
+    &#dictamen {
+      @include background-filter($trans-black, '/assets/img/bg/servicios/servicio-9.png');
+    }
+  }
+}
+
+#proyecto {
+  @include background-filter($trans-white, '/assets/img/bg/contactanos.jpg');
+}
+
+#mail {
+  color: $white;
+  @include background-filter($trans-black, '/assets/img/bg/quienes-somos.jpg');
+
+  a {
+    color: $white;
+    padding-right: 1em;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  h2 {
+    margin-top: 0px;
+  }
+
+  form {
+    padding-top: 20px;
+  }
+
+  .input {
+    width: 100%;
+    border: 1px solid black;
+    background: $white;
+    padding-left: 1em;
+    color: $black;
+    font-size: 1.5em;
+    border-radius: 0px;
+    margin-bottom: 1em;
   }
 }
