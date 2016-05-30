@@ -403,13 +403,29 @@ footer {
     min-width: 100vw;
     height: 50vh;
 
+    .info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      height: 100%;
+      width: 100%;
+      background: $black;
+      color: $white;
+      display: none;
+      padding: 1em;
+      overflow-y: scroll;
+    }
+
+    .title {
+      font-size: 2em;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+
     @media screen and (min-width: $screen-md-min) {
       min-width: 30vw;
       height: 50vh;
-    }
-
-    @media screen and (max-width: $screen-md-min) {
-
     }
 
     .container {
@@ -418,12 +434,6 @@ footer {
       bottom: 1em;
       text-align: center;
       width: 100%;
-
-      .title {
-        font-size: 2em;
-        font-weight: 400;
-        margin-bottom: 0;
-      }
 
       hr {
         margin-left: auto;

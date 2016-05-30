@@ -47,54 +47,117 @@ weight: 2
 
 <section id="servicios">
   <div id="peritaje-topografico" class="servicio">
+    <div class="info">
+      <h3 class="title">Peritajes Topográficos</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse reprehenderit consequatur facilis excepturi, doloremque neque, delectus cum beatae ipsa ea aliquam iste recusandae quisquam commodi, repellendus temporibus, laudantium architecto eius!
+      </p>
+    </div>
     <div class="container">
       <h3 class="title">Peritajes Topográficos</h3>
       <hr>
     </div>
   </div>
   <div id="supervision" class="servicio">
+    <div class="info">
+      <h3 class="title">Supervisión de Obra</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse reprehenderit consequatur facilis excepturi, doloremque neque, delectus cum beatae ipsa ea aliquam iste recusandae quisquam commodi, repellendus temporibus, laudantium architecto eius!
+      </p>
+    </div>
     <div class="container">
       <h3 class="title">Supervisión de Obra</h3>
       <hr>
     </div>
   </div>
   <div id="calidad" class="servicio">
+    <div class="info">
+      <h3 class="title">Control de Calidad</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse reprehenderit consequatur facilis excepturi, doloremque neque, delectus cum beatae ipsa ea aliquam iste recusandae quisquam commodi, repellendus temporibus, laudantium architecto eius!
+      </p>
+    </div>
     <div class="container">
       <h3 class="title">Control de Calidad</h3>
       <hr>
     </div>
   </div>
   <div id="ingenieria" class="servicio">
+    <div class="info">
+      <h3 class="title">Proyectos de Ingeniería</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse reprehenderit consequatur facilis excepturi, doloremque neque, delectus cum beatae ipsa ea aliquam iste recusandae quisquam commodi, repellendus temporibus, laudantium architecto eius!
+      </p>
+    </div>
     <div class="container">
       <h3 class="title">Proyectos de Ingeniería</h3>
       <hr>
     </div>
   </div>
   <div id="topografia" class="servicio">
+    <div class="info">
+      <h3 class="title">Topografía</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse reprehenderit consequatur facilis excepturi, doloremque neque, delectus cum beatae ipsa ea aliquam iste recusandae quisquam commodi, repellendus temporibus, laudantium architecto eius!
+      </p>
+    </div>
     <div class="container">
       <h3 class="title">Topografía</h3>
       <hr>
     </div>
   </div>
   <div id="geotecnico" class="servicio">
+    <div class="info">
+      <h3 class="title">Estudios Geotécnicos</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse reprehenderit consequatur facilis excepturi, doloremque neque, delectus cum beatae ipsa ea aliquam iste recusandae quisquam commodi, repellendus temporibus, laudantium architecto eius!
+      </p>
+    </div>
     <div class="container">
       <h3 class="title">Estudios Geotécnicos</h3>
       <hr>
     </div>
   </div>
   <div id="hidrologico" class="servicio">
+    <div class="info">
+      <h3 class="title">Estudios Hidrológicos</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse reprehenderit consequatur facilis excepturi, doloremque neque, delectus cum beatae ipsa ea aliquam iste recusandae quisquam commodi, repellendus temporibus, laudantium architecto eius!
+      </p>
+    </div>
     <div class="container">
       <h3 class="title">Estudios Hidrológicos</h3>
       <hr>
     </div>
   </div>
   <div id="consultoria" class="servicio">
+    <div class="info">
+      <h3 class="title">Consultoría</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse reprehenderit consequatur facilis excepturi, doloremque neque, delectus cum beatae ipsa ea aliquam iste recusandae quisquam commodi, repellendus temporibus, laudantium architecto eius!
+      </p>
+    </div>
     <div class="container">
       <h3 class="title">Consultoría</h3>
       <hr>
     </div>
   </div>
   <div id="dictamen" class="servicio">
+    <div class="info">
+      <h3 class="title">Dictámenes</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse reprehenderit consequatur facilis excepturi, doloremque neque, delectus cum beatae ipsa ea aliquam iste recusandae quisquam commodi, repellendus temporibus, laudantium architecto eius!
+      </p>
+    </div>
     <div class="container">
       <h3 class="title">Dictámenes</h3>
       <hr>
@@ -112,3 +175,14 @@ weight: 2
     </div>
   </div>
 </section>
+
+<script>
+  $('.servicio').each(function(index, servicio) {
+    $(servicio).hover(function() {
+      $(this).find('.info').fadeIn(400);
+    },
+    function() {
+      $(this).find('.info').fadeOut(400);
+    });
+  });
+</script>

@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "slick-carousel": "^1.5.9",
-    "font-awesome": "fontawesome#^4.6.3"
+    "font-awesome": "fontawesome#^4.6.3",
+    "jquery.nicescroll": "^3.6.8"
   }
 }
