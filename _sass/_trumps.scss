@@ -12,14 +12,17 @@ section {
     width: 100%;
   }
 
+  .row {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
   @media screen and (max-width: $screen-md-min) {
     min-height: 100%;
-    overflow-y: inherit;
   }
 
   @media screen and (min-width: $screen-md-min) {
     min-height: 50%;
-    overflow-y: inherit;
   }
 
   p {
@@ -54,20 +57,39 @@ section {
   margin-top: 1em;
   margin-bottom: 1em;
   padding: 1.2em;
+  transition: background-color 0.2s, color 0.2s, border 0.2s;
 
   &.btn-white {
     background-color: $white;
     color: $red;
+
+    &:hover {
+      color: $white;
+      border: .1em solid $white;
+      background-color: rgba(0, 0, 0, 0);
+    }
   }
 
   &.btn-red {
     background-color: $red;
     color: $white;
+
+    &:hover {
+      color: $red;
+      border: .1em solid $red;
+      background-color: rgba(0, 0, 0, 0);
+    }
   }
 
   &.btn-black {
     background-color: $black;
     color: $white;
+
+    &:hover {
+      color: $white;
+      border: .1em solid $white;
+      background-color: rgba(0, 0, 0, 0);
+    }
   }
 }
 
@@ -80,6 +102,10 @@ section {
 
   h3 {
     font-size: 4em;
+
+    @media screen and (max-width: $screen-md-min) {
+      font-size: 3em;
+    }
   }
 
   .content {
@@ -87,6 +113,11 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    @media screen and (max-width: $screen-md-min) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
   }
 }
 
@@ -110,6 +141,7 @@ section {
 
 .navbar-custom {
   background-color: $white;
+  border-bottom: 0;
 
   .collapse {
     height: 70px;
@@ -123,12 +155,6 @@ section {
     }
   }
 
-  a {
-    color: $red;
-    font-size: 1.2em;
-    font-weight: 700;
-  }
-
   .navbar-brand {
     padding:  13px;
     height:   70px;
@@ -140,12 +166,31 @@ section {
 
   .nav.navbar-nav {
     li {
-      padding-top:    10px;
-      padding-bottom: 10px;
       height:         70px;
 
-      a.active {
-        color: $black;
+      a{
+        color: $red;
+        font-size: 1.2em;
+        font-weight: 700;
+        transition: border-bottom .25s;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: .25em solid $white;
+
+        &:hover {
+          background-color: $white !important;
+          border-bottom: .25em solid $red;
+        }
+
+        &.active {
+          color: $black;
+
+          &:hover {
+            border-bottom: .25em solid $black;
+          }
+        }
       }
     }
   }
@@ -170,6 +215,7 @@ section {
     font-weight: 700;
     font-size: 2.5em;
     margin-bottom: 0;
+    animation: fadeInUp 2s;
 
     @media screen and (min-width: $screen-sm-min) {
       font-size: 3em;
@@ -181,7 +227,12 @@ section {
   }
 
   .subtitle {
+    opacity: 0;
     font-style: italic;
+    animation-name: fadeInUp;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
 
     @media screen and (min-width: $screen-sm-min) {
       font-size: 1.7em;
@@ -190,6 +241,13 @@ section {
     @media screen and (min-width: $screen-lg-min) {
       font-size: 2em;
     }
+  }
+
+  .contact {
+    opacity: 0;
+    animation: fadeInUp 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -202,6 +260,12 @@ section {
   .btn {
     font-size: 2em;
     padding: .5em;
+    border: 0.1em solid $black;
+
+    &:hover {
+      color: $black;
+      border: 0.1em solid $black;
+    }
 
     @media screen and (max-width: $screen-sm-min) {
       font-size: 1.5em;
@@ -363,7 +427,7 @@ footer {
   }
 
   #filosofia {
-    @include background-filter($trans-red, '/assets/img/sliders/valores/filosofia.jpg');
+    @include background-filter($trans-grey, '/assets/img/sliders/valores/filosofia.jpg');
   }
 }
 
@@ -489,10 +553,16 @@ footer {
   a {
     color: $white;
     padding-right: 1em;
+    transition: color .2s;
 
     &:hover {
-      color: $red;
+      color: $light-red;
     }
+  }
+
+  .btn.btn-red:hover {
+    color: $white;
+    border: .1em solid $white;
   }
 
   h2 {

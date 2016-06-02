@@ -9,6 +9,13 @@ body {
   font-family:  'DIN', sans-serif;;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 html {
   width:  100%;
   height: 100%;
@@ -18,6 +25,8 @@ hr {
   width: 20%;
   border-top: 0.4em solid;
   margin-left: 0;
+  animation-name: hr-width;
+  animation-duration: 1s;
 }
 
 @media screen and (max-width: 768px) {
