@@ -31,7 +31,7 @@ weight: 2
     </div>
     <div class="row">
       <div class="col-md-offset-2 col-md-2">
-        <img class="icon" src="/assets/img/svg/icons/truck.svg">
+        <img class="icon" src="/assets/img/svg/icons/truck.svg" alt="Camión">
       </div>
       <div class="col-md-6">
         <p>
@@ -170,18 +170,19 @@ weight: 2
     <div class="row vertical-center">
       <div class="text-center">
         <h2 class="title">¿Estás por empezar un proyecto?</h2>
-        <a href="" class="btn btn-black">CONTÁCTANOS</a>
+        <a href="/contacto" class="btn btn-black">CONTÁCTANOS</a>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  $('.servicio').each(function(index, servicio) {
-    $(servicio).hover(function() {
+  $('.servicio').each(function (index, servicio) {
+    $(servicio).hover(function () {
       $(this).find('.info').fadeIn(400);
     },
-    function() {
+
+    function () {
       $(this).find('.info').fadeOut(400);
     });
   });

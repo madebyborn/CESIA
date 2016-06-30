@@ -449,7 +449,7 @@ footer {
 }
 
 #servicios {
-  display: flex;
+  display: none;
   flex-direction: row;
   flex-wrap: wrap;
   height: auto;
@@ -462,7 +462,7 @@ footer {
   .servicio {
     background-color: $black;
     position: relative;
-    flex: 1;
+    flex: 1 0 auto;
     border: 1px $white;
     border-style: solid;
     min-width: 100vw;
